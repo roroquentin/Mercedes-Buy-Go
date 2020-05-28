@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "440386723911",
+    "firebase_url": "https://mercedesuygulamadersi.firebaseio.com",
+    "project_id": "mercedesuygulamadersi",
+    "storage_bucket": "mercedesuygulamadersi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:440386723911:android:0b8a0c101c21e5b9c11162",
+        "android_client_info": {
+          "package_name": "com.example.buygo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "440386723911-muoji654q7omgjhgl6k1qdr28cdno9ec.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.buygo",
+            "certificate_hash": "b24c9bec754dd7f8b252b8e7fe76aa47ce1484bc"
+          }
+        },
+        {
+          "client_id": "440386723911-1qo6o0j409v4uhdctf4n8tfa3pl0g8j7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJcJMPwN2DCqVx6ffvNEXzH8KGMzWueBo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "440386723911-1qo6o0j409v4uhdctf4n8tfa3pl0g8j7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

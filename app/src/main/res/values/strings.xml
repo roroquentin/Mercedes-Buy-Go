@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Buy Go</string>
+    <string name="register">KAYIT</string>
+    <string name="buy_go">BUY-GO</string>
+    <string name="best_or_not">En iyisi ya da hiç</string>
+    <string name="login_btn">Gir</string>
+    <string name="free_geben">Ücretsiz ver.</string>
+</resources>
