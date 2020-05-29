@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/recycle_row_usermail"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:paddingTop="11dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@color/white"/>
+
+
+    <ImageView
+        android:id="@+id/recycle_row_image"
+        android:layout_width="411dp"
+        android:layout_height="310dp"
+        app:srcCompat="@drawable/login_icon" />
+
+    <TextView
+        android:id="@+id/recycle_row_produktname"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:paddingTop="7dp"
+        android:textColor="@color/white"
+        />
+
+    <TextView
+        android:id="@+id/recycle_row_produktprice"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:paddingTop="7dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/recycle_row_produktstiation"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:paddingTop="7dp"
+        android:textColor="@color/white"
+        />
+
+    <TextView
+        android:id="@+id/recycle_row_produktinformation"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingTop="7dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@color/white" />
+
+</LinearLayout>
