@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -95,6 +96,49 @@ public class FeedBuyActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.frame_layout,profileFragment).commit();
 
     }
+
+    public void carBtnClicked (View view){
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        CarFragment profileFragment = new CarFragment();
+        fragmentTransaction.replace(R.id.frame_layout,profileFragment).commit();
+
+
+    }
+
+    public void babyBtnClicked (View view) {
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        BabyFragment profileFragment = new BabyFragment();
+        fragmentTransaction.replace(R.id.frame_layout,profileFragment).commit();
+
+    }
+
+    public void dresBtnClicked (View view) {
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        DresFragment profileFragment = new DresFragment();
+        fragmentTransaction.replace(R.id.frame_layout,profileFragment).commit();
+
+    }
+
+    public void homeKatBtnClicked (View view) {
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        HomeThingsFragment profileFragment = new HomeThingsFragment();
+        fragmentTransaction.replace(R.id.frame_layout,profileFragment).commit();
+
+    }
+
+
 
 
 }
