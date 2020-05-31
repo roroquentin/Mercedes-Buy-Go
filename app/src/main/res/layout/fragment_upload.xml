@@ -140,7 +140,7 @@
         android:background="@color/white"
         android:ems="10"
         android:fontFamily="@font/corporate"
-        android:hint="Başlık"
+        android:hint="Katagori"
         android:inputType="textPersonName"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
