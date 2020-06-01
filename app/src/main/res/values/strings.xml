@@ -5,4 +5,14 @@
     <string name="best_or_not">En iyisi ya da hiç</string>
     <string name="login_btn">Gir</string>
     <string name="free_geben">Ücretsiz ver.</string>
+    <string name="quit">Cıkıs</string>
+    <string name="name">Isim</string>
+    <string name="personal_info">Kisisel Bilgiler</string>
+    <string name="adress">Adres</string>
+    <string name="phone_number">Telefon</string>
+    <string name="change_pass">Sifre Degistir</string>
+    <string name="save">Kaydet</string>
+
+
+
 </resources>

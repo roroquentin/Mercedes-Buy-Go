@@ -1,20 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black">
+    android:background="@color/black"
+    >
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:text="Profil"
-        android:textSize="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textColor="@color/white"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/profile"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="261dp"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/user_profil_icon"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/setting"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="80dp"
+            app:layout_constraintStart_toStartOf="@+id/profile"
+            app:layout_constraintTop_toTopOf="@+id/profile"
+            app:srcCompat="@drawable/profilsetting_icon" />
+
+        <Button
+            android:id="@+id/quit"
+            android:layout_width="144dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="82dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="148dp"
+            android:background="@drawable/quit_button"
+            android:fontFamily="@font/corporate"
+            android:text="@string/quit"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/name_edit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/profile"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="322dp"
+            android:fontFamily="@font/corporate"
+            android:text="@string/name"
+            android:textColor="@color/grey"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile" />
+
+        <EditText
+            android:id="@+id/name_edit"
+            android:layout_width="347dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/edittext_background"
+            android:textColor="@color/grey"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text=""
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
+
+        <TextView
+            android:id="@+id/personel_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="222dp"
+            android:fontFamily="@font/corporate"
+            android:text="@string/personal_info"
+            android:textColor="@color/grey"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name_edit" />
+
+        <EditText
+            android:id="@+id/personal_info_edit"
+            android:layout_width="347dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="32dp"
+            android:textColor="@color/grey"
+            android:background="@drawable/edittext_background"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text=""
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/personel_info" />
+
+        <TextView
+            android:id="@+id/adress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="320dp"
+            android:fontFamily="@font/corporate"
+            android:text="@string/adress"
+            android:textColor="@color/grey"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/personal_info_edit" />
+
+        <EditText
+            android:id="@+id/adress_edit"
+            android:layout_width="347dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="32dp"
+            android:textColor="@color/grey"
+            android:background="@drawable/edittext_background"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text=""
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adress" />
+
+        <TextView
+            android:id="@+id/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="305dp"
+            android:fontFamily="@font/corporate"
+            android:text="@string/phone_number"
+            android:textColor="@color/grey"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adress_edit" />
+
+        <EditText
+            android:id="@+id/phone_edit"
+            android:layout_width="347dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/edittext_background"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text=""
+            android:textColor="@color/grey"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phone" />
+
+        <Button
+            android:id="@+id/pass"
+            android:layout_width="144dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/button"
+            android:fontFamily="@font/corporate"
+            android:text="@string/change_pass"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phone_edit" />
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="144dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="42dp"
+            android:background="@drawable/button"
+            android:fontFamily="@font/corporate"
+            android:text="@string/save"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phone_edit" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
