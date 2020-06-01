@@ -53,6 +53,7 @@ public class FeedBuyActivity extends AppCompatActivity {
 
     public void homePageBtnClicked (View view ){
 
+        setContentView(R.layout.activity_feed_buy);
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
@@ -62,6 +63,7 @@ public class FeedBuyActivity extends AppCompatActivity {
     }
     public void notificationBtnClicked (View view ){
 
+        setContentView(R.layout.activity_feed_buy);
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
@@ -71,6 +73,7 @@ public class FeedBuyActivity extends AppCompatActivity {
     }
     public void uploadBtnClicked (View view ){
 
+        setContentView(R.layout.activity_feed_buy2);
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
@@ -80,6 +83,7 @@ public class FeedBuyActivity extends AppCompatActivity {
     }
     public void adsBtnClicked (View view ){
 
+        setContentView(R.layout.activity_feed_buy);
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
@@ -89,6 +93,7 @@ public class FeedBuyActivity extends AppCompatActivity {
     }
     public void profileBtnClicked (View view ){
 
+        setContentView(R.layout.activity_feed_buy2);
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
@@ -99,6 +104,7 @@ public class FeedBuyActivity extends AppCompatActivity {
 
     public void carBtnClicked (View view){
 
+        setContentView(R.layout.activity_feed_buy);
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
@@ -110,6 +116,7 @@ public class FeedBuyActivity extends AppCompatActivity {
 
     public void babyBtnClicked (View view) {
 
+        setContentView(R.layout.activity_feed_buy);
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
@@ -120,6 +127,7 @@ public class FeedBuyActivity extends AppCompatActivity {
 
     public void dresBtnClicked (View view) {
 
+        setContentView(R.layout.activity_feed_buy);
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
@@ -130,6 +138,7 @@ public class FeedBuyActivity extends AppCompatActivity {
 
     public void homeKatBtnClicked (View view) {
 
+        setContentView(R.layout.activity_feed_buy);
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
