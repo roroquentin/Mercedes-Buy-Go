@@ -4,28 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:background="@color/black">
 
     <EditText
         android:id="@+id/produltStiationText"
         android:layout_width="373dp"
         android:layout_height="41dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:background="@color/white"
         android:ems="10"
         android:hint="Durum"
         android:inputType="textPersonName"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.578"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/produktPriceText" />
 
     <EditText
+        android:id="@+id/produktNameText"
+        android:layout_width="373dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="216dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:fontFamily="@font/corporate"
+        android:hint="Katagori"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/produktPriceText"
+        android:layout_width="373dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:fontFamily="@font/corporate"
+        android:hint="Fiyat"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/produktNameText" />
+
+    <EditText
+        android:id="@+id/produktInformationText"
+        android:layout_width="373dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bosluk_bar"
+        android:ems="10"
+        android:fontFamily="@font/corporate"
+        android:hint="Açıklama"
+        android:inputType="textPersonName"
+        android:lines="1"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/produltStiationText" />
+
+    <EditText
         android:id="@+id/editText5"
         android:layout_width="410dp"
-        android:layout_height="0dp"
+        android:layout_height="40dp"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="131dp"
+        android:layout_marginBottom="49dp"
         android:background="@color/grey"
         android:ems="10"
         android:fontFamily="@font/corporate"
@@ -34,26 +85,25 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/space"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.028" />
 
+
     <LinearLayout
 
         android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="410dp"
+        android:layout_height="123dp"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/produktNameText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/editText5">
 
 
         <ImageView
@@ -85,67 +135,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginEnd="10dp"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/chossephoto" />
 
     </LinearLayout>
-
-    <Space
-        android:id="@+id/space"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="415dp"
-        android:layout_weight="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5" />
-
-
-    <EditText
-        android:id="@+id/produktPriceText"
-        android:layout_width="373dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/white"
-        android:ems="10"
-        android:fontFamily="@font/corporate"
-        android:hint="Fiyat"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/produktNameText" />
-
-    <EditText
-        android:id="@+id/produktInformationText"
-        android:layout_width="373dp"
-        android:layout_height="97dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/bosluk_bar"
-        android:ems="10"
-        android:fontFamily="@font/corporate"
-        android:hint="Açıklama"
-        android:inputType="textPersonName"
-        android:lines="1"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/produltStiationText" />
-
-    <EditText
-        android:id="@+id/produktNameText"
-        android:layout_width="373dp"
-        android:layout_height="41dp"
-        android:background="@color/white"
-        android:ems="10"
-        android:fontFamily="@font/corporate"
-        android:hint="Katagori"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/space" />
 
     <Button
         android:id="@+id/sale_btn"
@@ -154,35 +148,32 @@
         android:background="@drawable/upload_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintHorizontal_bias="0.078"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/produktInformationText"
-        app:layout_constraintVertical_bias="0.538" />
-
-    <Switch
-        android:id="@+id/free_switch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="108dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/produktInformationText"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.535" />
 
     <TextView
         android:id="@+id/freeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/free_geben"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/free_switch"
-        app:layout_constraintTop_toBottomOf="@+id/produktInformationText"
-        app:layout_constraintVertical_bias="0.009" />
+        app:layout_constraintHorizontal_bias="0.966"
+        app:layout_constraintStart_toEndOf="@+id/sale_btn" />
+
+    <Switch
+        android:id="@+id/free_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

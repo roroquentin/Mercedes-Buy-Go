@@ -31,6 +31,7 @@ public class HomPageFragment extends Fragment {
 
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
+
     ArrayList<String> userMailFromDB;
     ArrayList<String> produktNameFromDB;
     ArrayList<String> produktPriceFromDB;
@@ -62,7 +63,8 @@ public class HomPageFragment extends Fragment {
         RecyclerView recyclerView = viewGroup.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        feedRecycleAdapter = new FeedRecycleAdapter(userMailFromDB,produktNameFromDB,produktPriceFromDB,produktStiationFromDB,produktInformationFromDB,produktImageFromDB);
+        feedRecycleAdapter = new FeedRecycleAdapter(userMailFromDB,produktNameFromDB,
+                produktPriceFromDB,produktStiationFromDB,produktInformationFromDB,produktImageFromDB);
 
         recyclerView.setAdapter(feedRecycleAdapter);
         return viewGroup;
@@ -103,7 +105,7 @@ public class HomPageFragment extends Fragment {
                          produktImageFromDB.add(imageUrl);
 
 
-                            feedRecycleAdapter.notifyDataSetChanged();
+                         feedRecycleAdapter.notifyDataSetChanged();
 
 
 
