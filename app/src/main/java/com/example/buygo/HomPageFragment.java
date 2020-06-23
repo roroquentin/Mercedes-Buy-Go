@@ -45,7 +45,6 @@ public class HomPageFragment extends Fragment {
         baseItemModelArrayList = new ArrayList<>();
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
-        getDataFromFireStore();
         RecyclerView recyclerView = viewGroup.findViewById(R.id.recyclerView);
         searchView = viewGroup.findViewById(R.id.searchView);
         btnBeybi = viewGroup.findViewById(R.id.btnBeybi);
@@ -61,7 +60,7 @@ public class HomPageFragment extends Fragment {
         btnDress.setOnClickListener(view -> dersClicked());
         btnCar.setOnClickListener(view -> carClicked());
         btnBeybi.setOnClickListener(view -> babyClicked());
-
+        getDataFromFireStore();
         return viewGroup;
     }
 
