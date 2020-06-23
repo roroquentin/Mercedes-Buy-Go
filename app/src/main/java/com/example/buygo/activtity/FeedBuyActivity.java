@@ -51,8 +51,10 @@ public class FeedBuyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityFeedBuyBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        carBtnClicked();
         firebaseAuth = FirebaseAuth.getInstance();
         listenSearchBar();
+
 
     }
 
@@ -66,7 +68,7 @@ public class FeedBuyActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String s) {
-              //  baseItemRecylerViewAdapter.getFilter().filter(s);
+                baseItemRecylerViewAdapter.getFilter().filter(s);
                 return false;
             }
         });
@@ -122,7 +124,7 @@ public class FeedBuyActivity extends AppCompatActivity {
 
     }
 
-    public void carBtnClicked(View view) {
+    public void carBtnClicked() {
 
         baseItemModelArrayList = new ArrayList<>();
         firebaseFirestore = FirebaseFirestore.getInstance();
