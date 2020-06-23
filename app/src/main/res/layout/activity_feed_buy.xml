@@ -160,5 +160,6 @@
                 app:queryBackground="@drawable/search_text_bar" />
 
         </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
