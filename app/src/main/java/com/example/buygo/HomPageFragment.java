@@ -72,6 +72,9 @@ public class HomPageFragment extends Fragment {
     }
 
     public void getDataFromFireStore() {
+        baseItemRecylerViewAdapter.getBaseItemModelArrayList().clear();
+        baseItemRecylerViewAdapter.getFilterList().clear();
+        baseItemRecylerViewAdapter.notifyDataSetChanged();
         CollectionReference collectionReference = firebaseFirestore.collection("Posts");
         collectionReference.orderBy("date", Query.Direction.DESCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
@@ -130,6 +133,9 @@ public class HomPageFragment extends Fragment {
     }
 
     public void carClicked() {
+        baseItemRecylerViewAdapter.getBaseItemModelArrayList().clear();
+        baseItemRecylerViewAdapter.getFilterList().clear();
+        baseItemRecylerViewAdapter.notifyDataSetChanged();
         CollectionReference collectionReference = firebaseFirestore.collection("Posts");
 
         collectionReference.orderBy("date", Query.Direction.DESCENDING).whereEqualTo("name", "Araba").addSnapshotListener(new EventListener<QuerySnapshot>() {
@@ -172,6 +178,9 @@ public class HomPageFragment extends Fragment {
     }
 
     public void babyClicked() {
+        baseItemRecylerViewAdapter.getBaseItemModelArrayList().clear();
+        baseItemRecylerViewAdapter.getFilterList().clear();
+        baseItemRecylerViewAdapter.notifyDataSetChanged();
         CollectionReference collectionReference = firebaseFirestore.collection("Posts");
 
         collectionReference.orderBy("date", Query.Direction.DESCENDING).whereEqualTo("name",
@@ -215,6 +224,9 @@ public class HomPageFragment extends Fragment {
     }
 
     public void dersClicked() {
+        baseItemRecylerViewAdapter.getBaseItemModelArrayList().clear();
+        baseItemRecylerViewAdapter.getFilterList().clear();
+        baseItemRecylerViewAdapter.notifyDataSetChanged();
         CollectionReference collectionReference = firebaseFirestore.collection("Posts");
 
         collectionReference.orderBy("date", Query.Direction.DESCENDING).whereEqualTo("name",
@@ -258,6 +270,9 @@ public class HomPageFragment extends Fragment {
     }
 
     public void homeClicked() {
+        baseItemRecylerViewAdapter.getBaseItemModelArrayList().clear();
+        baseItemRecylerViewAdapter.getFilterList().clear();
+        baseItemRecylerViewAdapter.notifyDataSetChanged();
         CollectionReference collectionReference = firebaseFirestore.collection("Posts");
 
         collectionReference.orderBy("date", Query.Direction.DESCENDING).whereEqualTo("name",
