@@ -66,7 +66,7 @@ public class FeedBuyActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String s) {
-                baseItemRecylerViewAdapter.getFilter().filter(s);
+              //  baseItemRecylerViewAdapter.getFilter().filter(s);
                 return false;
             }
         });
@@ -78,7 +78,7 @@ public class FeedBuyActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
         HomPageFragment homPageFragment = new HomPageFragment();
-        // fragmentTransaction.replace(R.id.frame_layout, homPageFragment).commit();
+         fragmentTransaction.replace(R.id.rcv_base, homPageFragment).commit();
 
     }
 
@@ -88,7 +88,7 @@ public class FeedBuyActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
         NotificationFragment notificationFragment = new NotificationFragment();
-        // fragmentTransaction.replace(R.id.frame_layout, notificationFragment).commit();
+         fragmentTransaction.replace(R.id.rcv_base, notificationFragment).commit();
 
     }
 
@@ -98,7 +98,7 @@ public class FeedBuyActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
         UploadFragment uploadFragment = new UploadFragment();
-        //  fragmentTransaction.replace(R.id.frame_layout, uploadFragment).commit();
+          fragmentTransaction.replace(R.id.rcv_base, uploadFragment).commit();
 
     }
 
@@ -108,7 +108,7 @@ public class FeedBuyActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
         MyAdsFragment myAdsFragment = new MyAdsFragment();
-        // fragmentTransaction.replace(R.id.frame_layout, myAdsFragment).commit();
+         fragmentTransaction.replace(R.id.rcv_base, myAdsFragment).commit();
 
     }
 
@@ -118,7 +118,7 @@ public class FeedBuyActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
         ProfileFragment profileFragment = new ProfileFragment();
-        //  fragmentTransaction.replace(R.id.frame_layout, profileFragment).commit();
+          fragmentTransaction.replace(R.id.rcv_base, profileFragment).commit();
 
     }
 

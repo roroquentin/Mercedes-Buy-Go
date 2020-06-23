@@ -156,8 +156,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
+                android:focusable="true"
+                android:iconifiedByDefault="false"
                 app:defaultQueryHint="Ara..."
-                app:iconifiedByDefault="false"
                 app:queryBackground="@drawable/search_text_bar" />
 
         </LinearLayout>
