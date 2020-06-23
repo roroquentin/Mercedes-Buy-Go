@@ -40,8 +40,8 @@ public class BaseItemFilter extends Filter {
             results.count = filtered.size();
             results.values = filtered;
         } else {
-            results.count = adapter.getFilterList().size();
-            results.values = adapter.getFilterList();
+            results.count = adapter.getBaseItemModelArrayList().size();
+            results.values = adapter.getBaseItemModelArrayList();
 
         }
         return results;
