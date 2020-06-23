@@ -54,7 +54,6 @@ public class FeedBuyActivity extends AppCompatActivity {
 
     }
 
-
     public void homePageBtnClicked(View view) {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -215,26 +214,6 @@ public class FeedBuyActivity extends AppCompatActivity {
 
     }
 
-
-    public void dresBtnClicked(View view) {
-
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-        DresFragment profileFragment = new DresFragment();
-        // fragmentTransaction.replace(R.id.frame_layout, profileFragment).commit();
-
-    }
-
-    public void homeKatBtnClicked(View view) {
-
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-        HomeThingsFragment profileFragment = new HomeThingsFragment();
-        // fragmentTransaction.replace(R.id.frame_layout, profileFragment).commit();
-
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
