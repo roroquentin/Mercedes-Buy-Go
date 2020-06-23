@@ -42,8 +42,7 @@
             app:layout_constraintTop_toBottomOf="@+id/searchView">
 
             <Button
-                android:onClick="carClicked"
-                android:id="@+id/car_katalog_btn"
+                android:id="@+id/btnCar"
                 android:layout_width="53dp"
                 android:layout_height="70dp"
                 android:layout_margin="2dp"
@@ -51,7 +50,7 @@
                 android:background="@drawable/car" />
 
             <Button
-                android:id="@+id/baby_katalog_btn"
+                android:id="@+id/btnBeybi"
                 android:layout_width="58dp"
                 android:layout_height="70dp"
                 android:layout_margin="2dp"
@@ -60,7 +59,7 @@
                 android:onClick="babyClicked" />
 
             <Button
-                android:id="@+id/dres_katalog_btn"
+                android:id="@+id/btnDres"
                 android:layout_width="63dp"
                 android:layout_height="70dp"
                 android:layout_margin="2dp"
@@ -69,7 +68,7 @@
                 android:onClick="dersClicked" />
 
             <Button
-                android:id="@+id/home_katalog_btn"
+                android:id="@+id/btnHomeThings"
                 android:layout_width="68dp"
                 android:layout_height="70dp"
                 android:layout_margin="2dp"

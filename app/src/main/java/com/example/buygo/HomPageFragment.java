@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.SearchView;
 import android.widget.Toast;
 
@@ -13,7 +14,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.buygo.activtity.FeedBuyActivity;
 import com.example.buygo.adapter.BaseItemRecylerViewAdapter;
 import com.example.buygo.models.BaseItemModel;
 import com.google.firebase.auth.FirebaseAuth;
@@ -34,6 +34,7 @@ public class HomPageFragment extends Fragment {
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
     private SearchView searchView;
+    private Button btnCar, btnDress, btnBeybi, btnHomeThings;
 
     @Nullable
     @Override
@@ -47,9 +48,20 @@ public class HomPageFragment extends Fragment {
         getDataFromFireStore();
         RecyclerView recyclerView = viewGroup.findViewById(R.id.recyclerView);
         searchView = viewGroup.findViewById(R.id.searchView);
+        btnBeybi = viewGroup.findViewById(R.id.btnBeybi);
+        btnCar = viewGroup.findViewById(R.id.btnCar);
+        btnDress = viewGroup.findViewById(R.id.btnDres);
+        btnHomeThings = viewGroup.findViewById(R.id.btnHomeThings);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         baseItemRecylerViewAdapter = new BaseItemRecylerViewAdapter(baseItemModelArrayList);
         recyclerView.setAdapter(baseItemRecylerViewAdapter);
+
+        //onclicks
+        btnHomeThings.setOnClickListener(view -> homeClicked());
+        btnDress.setOnClickListener(view -> dersClicked());
+        btnCar.setOnClickListener(view -> carClicked());
+        btnBeybi.setOnClickListener(view -> babyClicked());
+
         return viewGroup;
     }
 
@@ -117,7 +129,7 @@ public class HomPageFragment extends Fragment {
         });
     }
 
-    public void carClicked(View view) {
+    public void carClicked() {
         CollectionReference collectionReference = firebaseFirestore.collection("Posts");
 
         collectionReference.orderBy("date", Query.Direction.DESCENDING).whereEqualTo("name", "Araba").addSnapshotListener(new EventListener<QuerySnapshot>() {
@@ -158,7 +170,8 @@ public class HomPageFragment extends Fragment {
             }
         });
     }
-    public void babyClicked(View view) {
+
+    public void babyClicked() {
         CollectionReference collectionReference = firebaseFirestore.collection("Posts");
 
         collectionReference.orderBy("date", Query.Direction.DESCENDING).whereEqualTo("name",
@@ -200,7 +213,8 @@ public class HomPageFragment extends Fragment {
             }
         });
     }
-    public void dersClicked(View view) {
+
+    public void dersClicked() {
         CollectionReference collectionReference = firebaseFirestore.collection("Posts");
 
         collectionReference.orderBy("date", Query.Direction.DESCENDING).whereEqualTo("name",
@@ -242,7 +256,8 @@ public class HomPageFragment extends Fragment {
             }
         });
     }
-    public void homeClicked(View view){
+
+    public void homeClicked() {
         CollectionReference collectionReference = firebaseFirestore.collection("Posts");
 
         collectionReference.orderBy("date", Query.Direction.DESCENDING).whereEqualTo("name",
@@ -284,4 +299,6 @@ public class HomPageFragment extends Fragment {
             }
         });
     }
+
+
 }
