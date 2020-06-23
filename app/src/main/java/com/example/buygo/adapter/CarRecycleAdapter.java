@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class CarRecycleAdapter extends RecyclerView.Adapter<CarRecycleAdapter.CarPost> implements Filterable {
 
     private ArrayList<CarModel> carModelArrayList;
-    private ArrayList<CarModel> filterList;
+    private ArrayList<CarModel> filterList=new ArrayList<>();
 
     public ArrayList<CarModel> getFilterList() {
         return filterList;
