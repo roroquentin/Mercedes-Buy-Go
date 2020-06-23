@@ -12,8 +12,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.buygo.adapter.CarRecycleAdapter;
-import com.example.buygo.models.CarModel;
+import com.example.buygo.adapter.BaseItemRecylerViewAdapter;
+import com.example.buygo.models.BaseItemModel;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -27,8 +27,8 @@ import java.util.Map;
 
 public class CarFragment extends Fragment {
 
-    ArrayList<CarModel> carModelArrayList;
-    CarRecycleAdapter carRecycleAdapter;
+    ArrayList<BaseItemModel> baseItemModelArrayList;
+    BaseItemRecylerViewAdapter baseItemRecylerViewAdapter;
     private FirebaseFirestore firebaseFirestore;
 
     @Nullable
@@ -36,19 +36,16 @@ public class CarFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         ViewGroup viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_car, container, false);
-
-        carModelArrayList = new ArrayList<>();
-
-
+        baseItemModelArrayList = new ArrayList<>();
         firebaseFirestore = FirebaseFirestore.getInstance();
         getDataCarFromFirebase();
 
         RecyclerView recyclerView = viewGroup.findViewById(R.id.recyclerView2);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        carRecycleAdapter = new CarRecycleAdapter(carModelArrayList);
+        baseItemRecylerViewAdapter = new BaseItemRecylerViewAdapter(baseItemModelArrayList);
 
-        recyclerView.setAdapter(carRecycleAdapter);
+        recyclerView.setAdapter(baseItemRecylerViewAdapter);
 
         return viewGroup;
     }
@@ -79,15 +76,15 @@ public class CarFragment extends Fragment {
                         String stiation = (String) data.get("stiation");
                         String information = (String) data.get("information");
                         String imageUrl = (String) data.get("downloadurl");
-                        CarModel carModel = new CarModel();
-                        carModel.setProduktImage(imageUrl);
-                        carModel.setProduktInformation(information);
-                        carModel.setProduktName(name);
-                        carModel.setProduktPrice(price);
-                        carModel.setProduktStiation(stiation);
-                        carModel.setUserMail(userMail);
-                        carModelArrayList.add(carModel);
-                        carRecycleAdapter.notifyDataSetChanged();
+                        BaseItemModel baseItemModel = new BaseItemModel();
+                        baseItemModel.setProduktImage(imageUrl);
+                        baseItemModel.setProduktInformation(information);
+                        baseItemModel.setProduktName(name);
+                        baseItemModel.setProduktPrice(price);
+                        baseItemModel.setProduktStiation(stiation);
+                        baseItemModel.setUserMail(userMail);
+                        baseItemModelArrayList.add(baseItemModel);
+                        baseItemRecylerViewAdapter.notifyDataSetChanged();
 
                     }
                 }

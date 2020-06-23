@@ -1,4 +1,4 @@
-package com.example.buygo;
+package com.example.buygo.activtity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,13 +9,14 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.buygo.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
-public class RegisterActivity extends AppCompatActivity {
+public class SignUpActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
     EditText nameText,surnameText,emailText,passworText;
@@ -23,34 +24,39 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_sign_up);
 
         firebaseAuth = FirebaseAuth.getInstance();
-        nameText = findViewById(R.id.nameText);
-        surnameText = findViewById(R.id.surnameText);
-        emailText = findViewById(R.id.emailText);
-        passworText = findViewById(R.id.passwordText);
 
+        emailText = findViewById(R.id.loginName);
+        passworText = findViewById(R.id.loginPass);
+
+        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+
+        if (firebaseUser != null){
+
+            Intent intent = new Intent(SignUpActivity.this, BuyOrGoActivity.class);
+            startActivity(intent);
+            finish();
+
+        }
 
 
     }
 
 
-    public void signupClicked(View view){
 
-        String name = nameText.getText().toString();
-        String surname = surnameText.getText().toString();
+    public void signinClicked (View view) {
+
         String email = emailText.getText().toString();
         String password = passworText.getText().toString();
 
 
-        firebaseAuth.createUserWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+        firebaseAuth.signInWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
 
-               Toast.makeText(RegisterActivity.this,"Aramıza Hoşgeldin!", Toast.LENGTH_LONG).show();
-
-                Intent intent = new Intent(RegisterActivity.this, SignUpActivity.class);
+                Intent intent = new Intent(SignUpActivity.this, BuyOrGoActivity.class);
                 startActivity(intent);
                 finish();
 
@@ -59,15 +65,22 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
 
-                Toast.makeText(RegisterActivity.this,e.getLocalizedMessage().toString(), Toast.LENGTH_LONG).show();
+                Toast.makeText(SignUpActivity.this,e.getLocalizedMessage().toString(), Toast.LENGTH_LONG).show();
 
             }
         });
 
 
+    }
 
+    public void registerClicked (View view) {
 
-
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
+        finish();
 
     }
+
+
+
 }

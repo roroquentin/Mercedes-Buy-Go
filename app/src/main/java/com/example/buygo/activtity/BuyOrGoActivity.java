@@ -1,10 +1,13 @@
-package com.example.buygo;
+package com.example.buygo.activtity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.buygo.R;
+import com.example.buygo.activtity.FeedBuyActivity;
 
 public class BuyOrGoActivity extends AppCompatActivity {
 

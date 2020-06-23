@@ -3,7 +3,7 @@ package com.example.buygo.models;
 /**
  * Created by hamurcuabi on 23,June,2020
  **/
-public class CarModel {
+public class BaseItemModel {
     private String userMail;
     private String produktName;
     private String produktPrice;
@@ -11,7 +11,7 @@ public class CarModel {
     private String produktInformation;
     private String produktImage;
 
-    public CarModel() {
+    public BaseItemModel() {
     }
 
     public String getUserMail() {

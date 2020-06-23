@@ -1,166 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/black"
-    tools:context=".FeedBuyActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        android:background="@color/grey"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+    <data>
 
-        <Button
-            android:id="@+id/home_btn"
-            android:layout_width="25dp"
-            android:layout_height="48dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_weight="1"
-            android:background="@drawable/home_icon"
-            android:onClick="homePageBtnClicked" />
+    </data>
 
-        <Button
-            android:id="@+id/notification_btn"
-            android:layout_width="25dp"
-            android:layout_height="48dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_weight="1"
-            android:background="@drawable/notification_icon"
-            android:onClick="notificationBtnClicked" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        tools:context=".activtity.FeedBuyActivity">
 
-        <Button
-            android:id="@+id/upload_btn"
-            android:layout_width="25dp"
-            android:layout_height="48dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_weight="1"
-            android:background="@drawable/upload_icon"
-            android:onClick="uploadBtnClicked" />
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@color/grey"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-        <Button
-            android:id="@+id/ads_btn"
-            android:layout_width="25dp"
-            android:layout_height="48dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_weight="1"
-            android:background="@drawable/ads_icon"
-            android:onClick="adsBtnClicked" />
+            <Button
+                android:id="@+id/home_btn"
+                android:layout_width="25dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/home_icon"
+                android:onClick="homePageBtnClicked" />
 
-        <Button
-            android:id="@+id/profil_btn"
-            android:layout_width="25dp"
-            android:layout_height="48dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:background="@drawable/profil_icon"
-            android:onClick="profileBtnClicked" />
-    </LinearLayout>
+            <Button
+                android:id="@+id/notification_btn"
+                android:layout_width="25dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/notification_icon"
+                android:onClick="notificationBtnClicked" />
 
-    <FrameLayout
-        android:id="@+id/frame_layout"
-        android:layout_width="0dp"
-        android:layout_height="432dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="113dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="58dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+            <Button
+                android:id="@+id/upload_btn"
+                android:layout_width="25dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/upload_icon"
+                android:onClick="uploadBtnClicked" />
 
-    </FrameLayout>
+            <Button
+                android:id="@+id/ads_btn"
+                android:layout_width="25dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/ads_icon"
+                android:onClick="adsBtnClicked" />
 
-    <LinearLayout
-        android:id="@+id/kataglog"
-        android:layout_width="409dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="3dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/frame_layout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/search_bar">
+            <Button
+                android:id="@+id/profil_btn"
+                android:layout_width="25dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/profil_icon"
+                android:onClick="profileBtnClicked" />
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/car_katalog_btn"
-            android:layout_width="53dp"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_base"
+            android:layout_width="0dp"
+            android:layout_height="432dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="113dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="58dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <LinearLayout
+            android:id="@+id/kataglog"
+            android:layout_width="409dp"
             android:layout_height="70dp"
-            android:layout_margin="2dp"
-            android:layout_weight="1"
-            android:background="@drawable/car"
-            android:onClick="carBtnClicked" />
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="3dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/rcv_base"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/search_bar">
 
-        <Button
-            android:id="@+id/baby_katalog_btn"
-            android:layout_width="58dp"
-            android:layout_height="70dp"
-            android:layout_margin="2dp"
-            android:layout_weight="1"
-            android:background="@drawable/bayb"
-            android:onClick="babyBtnClicked" />
+            <Button
+                android:id="@+id/car_katalog_btn"
+                android:layout_width="53dp"
+                android:layout_height="70dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/car"
+                android:onClick="carBtnClicked" />
 
-        <Button
-            android:id="@+id/dres_katalog_btn"
-            android:layout_width="63dp"
-            android:layout_height="70dp"
-            android:layout_margin="2dp"
-            android:layout_weight="1"
-            android:background="@drawable/dres"
-            android:onClick="dresBtnClicked" />
+            <Button
+                android:id="@+id/baby_katalog_btn"
+                android:layout_width="58dp"
+                android:layout_height="70dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/bayb"
+                android:onClick="babyBtnClicked" />
 
-        <Button
-            android:id="@+id/home_katalog_btn"
-            android:layout_width="68dp"
-            android:layout_height="70dp"
-            android:layout_margin="2dp"
-            android:layout_weight="1"
-            android:background="@drawable/home"
-            android:onClick="homeKatBtnClicked" />
-    </LinearLayout>
+            <Button
+                android:id="@+id/dres_katalog_btn"
+                android:layout_width="63dp"
+                android:layout_height="70dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/dres"
+                android:onClick="dresBtnClicked" />
 
-    <LinearLayout
-        android:id="@+id/search_bar"
-        android:layout_width="409dp"
-        android:layout_height="40dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+            <Button
+                android:id="@+id/home_katalog_btn"
+                android:layout_width="68dp"
+                android:layout_height="70dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/home"
+                android:onClick="homeKatBtnClicked" />
+        </LinearLayout>
 
-        <EditText
-            android:id="@+id/search_src_text"
-            android:layout_width="345dp"
-            android:layout_height="35dp"
-            android:layout_margin="3dp"
-            android:background="@drawable/search_text_bar"
-            android:ems="10"
-            android:hint="Arama yap"
-            android:inputType="textPersonName" />
+        <LinearLayout
+            android:id="@+id/search_bar"
+            android:layout_width="409dp"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="40dp"
-            android:layout_height="35dp"
-            android:layout_margin="3dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/search_icon" />
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search_src_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                app:defaultQueryHint="Ara..."
+                app:iconifiedByDefault="false"
+                app:queryBackground="@drawable/search_text_bar" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

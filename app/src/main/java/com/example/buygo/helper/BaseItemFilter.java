@@ -2,8 +2,8 @@ package com.example.buygo.helper;
 
 import android.widget.Filter;
 
-import com.example.buygo.adapter.CarRecycleAdapter;
-import com.example.buygo.models.CarModel;
+import com.example.buygo.adapter.BaseItemRecylerViewAdapter;
+import com.example.buygo.models.BaseItemModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,12 +11,12 @@ import java.util.List;
 /**
  * Created by hamurcuabi on 23,June,2020
  **/
-public class CarFilter extends Filter {
-    ArrayList<CarModel> filterList;
-    CarRecycleAdapter adapter;
+public class BaseItemFilter extends Filter {
+    ArrayList<BaseItemModel> filterList;
+    BaseItemRecylerViewAdapter adapter;
 
-    public CarFilter(CarRecycleAdapter adapter,
-                     ArrayList<CarModel> filterList) {
+    public BaseItemFilter(BaseItemRecylerViewAdapter adapter,
+                          ArrayList<BaseItemModel> filterList) {
         this.adapter = adapter;
         this.filterList = filterList;
     }
@@ -28,7 +28,7 @@ public class CarFilter extends Filter {
 
         if (constraint != null && constraint.length() > 0) {
             constraint = constraint.toString().toLowerCase();
-            List<CarModel> filtered = new ArrayList<>();
+            List<BaseItemModel> filtered = new ArrayList<>();
 
             for (int i = 0; i < adapter.getFilterList().size(); i++) {
                 if ((adapter.getFilterList().get(i)).getProduktInformation().toLowerCase().contains(constraint)) {
@@ -49,7 +49,7 @@ public class CarFilter extends Filter {
 
     @Override
     protected void publishResults(CharSequence constraint, FilterResults results) {
-        adapter.setCarModelArrayList((ArrayList<CarModel>) results.values);
+        adapter.setBaseItemModelArrayList((ArrayList<BaseItemModel>) results.values);
     }
 }
 

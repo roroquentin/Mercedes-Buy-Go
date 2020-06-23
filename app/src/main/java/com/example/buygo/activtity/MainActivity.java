@@ -1,4 +1,4 @@
-package com.example.buygo;
+package com.example.buygo.activtity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+
+import com.example.buygo.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,SignUpActivity.class);
+                Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
                 startActivity(intent);
             }
         });
