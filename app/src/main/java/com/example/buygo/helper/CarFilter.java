@@ -30,9 +30,9 @@ public class CarFilter extends Filter {
             constraint = constraint.toString().toLowerCase();
             List<CarModel> filtered = new ArrayList<>();
 
-            for (int i = 0; i < adapter.getCarModelArrayList().size(); i++) {
-                if ((adapter.getCarModelArrayList().get(i)).getProduktInformation().toLowerCase().contains(constraint)) {
-                    filtered.add(adapter.getCarModelArrayList().get(i));
+            for (int i = 0; i < adapter.getFilterList().size(); i++) {
+                if ((adapter.getFilterList().get(i)).getProduktInformation().toLowerCase().contains(constraint)) {
+                    filtered.add(adapter.getFilterList().get(i));
                 }
 
             }
@@ -40,8 +40,8 @@ public class CarFilter extends Filter {
             results.count = filtered.size();
             results.values = filtered;
         } else {
-            results.count = adapter.getCarModelArrayList().size();
-            results.values = adapter.getCarModelArrayList();
+            results.count = adapter.getFilterList().size();
+            results.values = adapter.getFilterList();
 
         }
         return results;
