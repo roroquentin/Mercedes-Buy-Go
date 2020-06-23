@@ -1,4 +1,4 @@
-package com.example.buygo.helper;
+package com.example.buygo.adapter;
 
 import android.widget.Filter;
 

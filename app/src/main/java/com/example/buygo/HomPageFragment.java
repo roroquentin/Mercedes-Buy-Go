@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.buygo.activtity.FeedBuyActivity;
 import com.example.buygo.adapter.BaseItemRecylerViewAdapter;
 import com.example.buygo.models.BaseItemModel;
 import com.google.firebase.auth.FirebaseAuth;
@@ -89,8 +90,7 @@ public class HomPageFragment extends Fragment {
                         baseItemModel.setProduktPrice(price);
                         baseItemModel.setProduktStiation(stiation);
                         baseItemModel.setUserMail(userMail);
-                        baseItemModelArrayList.add(baseItemModel);
-                        baseItemRecylerViewAdapter.notifyDataSetChanged();
+                        baseItemRecylerViewAdapter.addItem(baseItemModel);
 
 
                     }
@@ -113,6 +113,174 @@ public class HomPageFragment extends Fragment {
             public boolean onQueryTextChange(String s) {
                 baseItemRecylerViewAdapter.getFilter().filter(s);
                 return false;
+            }
+        });
+    }
+
+    public void carClicked(View view) {
+        CollectionReference collectionReference = firebaseFirestore.collection("Posts");
+
+        collectionReference.orderBy("date", Query.Direction.DESCENDING).whereEqualTo("name", "Araba").addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+
+                if (e != null) {
+
+                    Toast.makeText(requireContext(), e.getLocalizedMessage().toString(),
+                            Toast.LENGTH_LONG).show();
+
+                }
+
+                if (queryDocumentSnapshots != null) {
+
+                    for (DocumentSnapshot snapshot : queryDocumentSnapshots.getDocuments()) {
+
+                        Map<String, Object> data = snapshot.getData();
+
+                        String userMail = (String) data.get("usermail");
+                        String name = (String) data.get("name");
+                        String price = (String) data.get("price");
+                        String stiation = (String) data.get("stiation");
+                        String information = (String) data.get("information");
+                        String imageUrl = (String) data.get("downloadurl");
+                        BaseItemModel baseItemModel = new BaseItemModel();
+                        baseItemModel.setProduktImage(imageUrl);
+                        baseItemModel.setProduktInformation(information);
+                        baseItemModel.setProduktName(name);
+                        baseItemModel.setProduktPrice(price);
+                        baseItemModel.setProduktStiation(stiation);
+                        baseItemModel.setUserMail(userMail);
+                        baseItemRecylerViewAdapter.addItem(baseItemModel);
+
+                    }
+                }
+
+            }
+        });
+    }
+    public void babyClicked(View view) {
+        CollectionReference collectionReference = firebaseFirestore.collection("Posts");
+
+        collectionReference.orderBy("date", Query.Direction.DESCENDING).whereEqualTo("name",
+                "Bebek").addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+
+                if (e != null) {
+
+                    Toast.makeText(requireContext(), e.getLocalizedMessage().toString(),
+                            Toast.LENGTH_LONG).show();
+
+                }
+
+                if (queryDocumentSnapshots != null) {
+
+                    for (DocumentSnapshot snapshot : queryDocumentSnapshots.getDocuments()) {
+
+                        Map<String, Object> data = snapshot.getData();
+
+                        String userMail = (String) data.get("usermail");
+                        String name = (String) data.get("name");
+                        String price = (String) data.get("price");
+                        String stiation = (String) data.get("stiation");
+                        String information = (String) data.get("information");
+                        String imageUrl = (String) data.get("downloadurl");
+                        BaseItemModel baseItemModel = new BaseItemModel();
+                        baseItemModel.setProduktImage(imageUrl);
+                        baseItemModel.setProduktInformation(information);
+                        baseItemModel.setProduktName(name);
+                        baseItemModel.setProduktPrice(price);
+                        baseItemModel.setProduktStiation(stiation);
+                        baseItemModel.setUserMail(userMail);
+                        baseItemRecylerViewAdapter.addItem(baseItemModel);
+
+                    }
+                }
+
+            }
+        });
+    }
+    public void dersClicked(View view) {
+        CollectionReference collectionReference = firebaseFirestore.collection("Posts");
+
+        collectionReference.orderBy("date", Query.Direction.DESCENDING).whereEqualTo("name",
+                "Giyim").addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+
+                if (e != null) {
+
+                    Toast.makeText(requireContext(), e.getLocalizedMessage().toString(),
+                            Toast.LENGTH_LONG).show();
+
+                }
+
+                if (queryDocumentSnapshots != null) {
+
+                    for (DocumentSnapshot snapshot : queryDocumentSnapshots.getDocuments()) {
+
+                        Map<String, Object> data = snapshot.getData();
+
+                        String userMail = (String) data.get("usermail");
+                        String name = (String) data.get("name");
+                        String price = (String) data.get("price");
+                        String stiation = (String) data.get("stiation");
+                        String information = (String) data.get("information");
+                        String imageUrl = (String) data.get("downloadurl");
+                        BaseItemModel baseItemModel = new BaseItemModel();
+                        baseItemModel.setProduktImage(imageUrl);
+                        baseItemModel.setProduktInformation(information);
+                        baseItemModel.setProduktName(name);
+                        baseItemModel.setProduktPrice(price);
+                        baseItemModel.setProduktStiation(stiation);
+                        baseItemModel.setUserMail(userMail);
+                        baseItemRecylerViewAdapter.addItem(baseItemModel);
+
+                    }
+                }
+
+            }
+        });
+    }
+    public void homeClicked(View view){
+        CollectionReference collectionReference = firebaseFirestore.collection("Posts");
+
+        collectionReference.orderBy("date", Query.Direction.DESCENDING).whereEqualTo("name",
+                "Ev Aletleri").addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+
+                if (e != null) {
+
+                    Toast.makeText(requireContext(), e.getLocalizedMessage().toString(),
+                            Toast.LENGTH_LONG).show();
+
+                }
+
+                if (queryDocumentSnapshots != null) {
+
+                    for (DocumentSnapshot snapshot : queryDocumentSnapshots.getDocuments()) {
+
+                        Map<String, Object> data = snapshot.getData();
+
+                        String userMail = (String) data.get("usermail");
+                        String name = (String) data.get("name");
+                        String price = (String) data.get("price");
+                        String stiation = (String) data.get("stiation");
+                        String information = (String) data.get("information");
+                        String imageUrl = (String) data.get("downloadurl");
+                        BaseItemModel baseItemModel = new BaseItemModel();
+                        baseItemModel.setProduktImage(imageUrl);
+                        baseItemModel.setProduktInformation(information);
+                        baseItemModel.setProduktName(name);
+                        baseItemModel.setProduktPrice(price);
+                        baseItemModel.setProduktStiation(stiation);
+                        baseItemModel.setUserMail(userMail);
+                        baseItemRecylerViewAdapter.addItem(baseItemModel);
+
+                    }
+                }
+
             }
         });
     }

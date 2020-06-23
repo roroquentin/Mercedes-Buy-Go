@@ -12,7 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.buygo.R;
-import com.example.buygo.helper.BaseItemFilter;
 import com.example.buygo.models.BaseItemModel;
 import com.squareup.picasso.Picasso;
 
@@ -22,6 +21,12 @@ public class BaseItemRecylerViewAdapter extends RecyclerView.Adapter<BaseItemRec
 
     private ArrayList<BaseItemModel> baseItemModelArrayList;
     private ArrayList<BaseItemModel> filterList=new ArrayList<>();
+
+    public void addItem(BaseItemModel itemModel){
+        baseItemModelArrayList.add(itemModel);
+        filterList.add(itemModel);
+        notifyDataSetChanged();
+    }
 
     public ArrayList<BaseItemModel> getFilterList() {
         return filterList;
