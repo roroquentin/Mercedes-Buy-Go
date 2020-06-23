@@ -6,7 +6,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -14,7 +13,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.buygo.DresFragment;
 import com.example.buygo.HomPageFragment;
@@ -51,28 +49,11 @@ public class FeedBuyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityFeedBuyBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        carBtnClicked();
         firebaseAuth = FirebaseAuth.getInstance();
-        listenSearchBar();
-
+        homePageBtnClicked();
 
     }
 
-    private void listenSearchBar() {
-        binding.searchSrcText.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String s) {
-                getDataFromFirebase(s);
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String s) {
-                baseItemRecylerViewAdapter.getFilter().filter(s);
-                return false;
-            }
-        });
-    }
 
     public void homePageBtnClicked(View view) {
 
@@ -80,7 +61,17 @@ public class FeedBuyActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
         HomPageFragment homPageFragment = new HomPageFragment();
-         fragmentTransaction.replace(R.id.rcv_base, homPageFragment).commit();
+        fragmentTransaction.replace(R.id.frame_container, homPageFragment).commit();
+
+    }
+
+    public void homePageBtnClicked() {
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        HomPageFragment homPageFragment = new HomPageFragment();
+        fragmentTransaction.replace(R.id.frame_container, homPageFragment).commit();
 
     }
 
@@ -90,7 +81,7 @@ public class FeedBuyActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
         NotificationFragment notificationFragment = new NotificationFragment();
-         fragmentTransaction.replace(R.id.rcv_base, notificationFragment).commit();
+        fragmentTransaction.replace(R.id.frame_container, notificationFragment).commit();
 
     }
 
@@ -100,7 +91,7 @@ public class FeedBuyActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
         UploadFragment uploadFragment = new UploadFragment();
-          fragmentTransaction.replace(R.id.rcv_base, uploadFragment).commit();
+        fragmentTransaction.replace(R.id.frame_container, uploadFragment).commit();
 
     }
 
@@ -110,7 +101,7 @@ public class FeedBuyActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
         MyAdsFragment myAdsFragment = new MyAdsFragment();
-         fragmentTransaction.replace(R.id.rcv_base, myAdsFragment).commit();
+        fragmentTransaction.replace(R.id.frame_container, myAdsFragment).commit();
 
     }
 
@@ -120,11 +111,11 @@ public class FeedBuyActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
         ProfileFragment profileFragment = new ProfileFragment();
-          fragmentTransaction.replace(R.id.rcv_base, profileFragment).commit();
+        fragmentTransaction.replace(R.id.frame_container, profileFragment).commit();
 
     }
 
-    public void carBtnClicked() {
+ /*   public void carBtnClicked() {
 
         baseItemModelArrayList = new ArrayList<>();
         firebaseFirestore = FirebaseFirestore.getInstance();
@@ -132,7 +123,7 @@ public class FeedBuyActivity extends AppCompatActivity {
         binding.rcvBase.setLayoutManager(new LinearLayoutManager(this));
         baseItemRecylerViewAdapter = new BaseItemRecylerViewAdapter(baseItemModelArrayList);
         binding.rcvBase.setAdapter(baseItemRecylerViewAdapter);
-    }
+    }*/
 
     public void getDataCarFromFirebase() {
 
@@ -224,10 +215,6 @@ public class FeedBuyActivity extends AppCompatActivity {
 
     }
 
-    public void babyBtnClicked(View view) {
-
-
-    }
 
     public void dresBtnClicked(View view) {
 

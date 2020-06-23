@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -12,7 +13,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.buygo.adapter.FeedRecycleAdapter;
+import com.example.buygo.adapter.BaseItemRecylerViewAdapter;
+import com.example.buygo.models.BaseItemModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -26,94 +28,92 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class HomPageFragment extends Fragment {
-
-
+    private ArrayList<BaseItemModel> baseItemModelArrayList;
+    private BaseItemRecylerViewAdapter baseItemRecylerViewAdapter;
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
-
-    ArrayList<String> userMailFromDB;
-    ArrayList<String> produktNameFromDB;
-    ArrayList<String> produktPriceFromDB;
-    ArrayList<String> produktStiationFromDB;
-    ArrayList<String> produktInformationFromDB;
-    ArrayList<String> produktImageFromDB;
-    FeedRecycleAdapter feedRecycleAdapter;
-
-
+    private SearchView searchView;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-            ViewGroup viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_hompage,container,false);
+        ViewGroup viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_hompage, container, false);
 
-            userMailFromDB = new ArrayList<>();
-            produktNameFromDB = new ArrayList<>();
-            produktPriceFromDB = new ArrayList<>();
-            produktStiationFromDB = new ArrayList<>();
-            produktInformationFromDB = new ArrayList<>();
-            produktImageFromDB = new ArrayList<>();
-
-
+        baseItemModelArrayList = new ArrayList<>();
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
         getDataFromFireStore();
-
         RecyclerView recyclerView = viewGroup.findViewById(R.id.recyclerView);
+        searchView = viewGroup.findViewById(R.id.searchView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
-        feedRecycleAdapter = new FeedRecycleAdapter(userMailFromDB,produktNameFromDB,
-                produktPriceFromDB,produktStiationFromDB,produktInformationFromDB,produktImageFromDB);
-
-        recyclerView.setAdapter(feedRecycleAdapter);
+        baseItemRecylerViewAdapter = new BaseItemRecylerViewAdapter(baseItemModelArrayList);
+        recyclerView.setAdapter(baseItemRecylerViewAdapter);
         return viewGroup;
     }
 
-    public void getDataFromFireStore(){
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        listenSearchBar();
+    }
 
+    public void getDataFromFireStore() {
         CollectionReference collectionReference = firebaseFirestore.collection("Posts");
-
         collectionReference.orderBy("date", Query.Direction.DESCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
 
-                if (e != null){
+                if (e != null) {
 
-                    Toast.makeText(getContext(),e.getLocalizedMessage().toString(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), e.getLocalizedMessage().toString(), Toast.LENGTH_LONG).show();
 
                 }
 
-                if (queryDocumentSnapshots != null){
+                if (queryDocumentSnapshots != null) {
 
-                     for (DocumentSnapshot snapshot : queryDocumentSnapshots.getDocuments()){
+                    for (DocumentSnapshot snapshot : queryDocumentSnapshots.getDocuments()) {
 
-                         Map<String, Object> data = snapshot.getData();
+                        Map<String, Object> data = snapshot.getData();
 
-                         String userMail = (String) data.get("usermail");
-                         String name = (String) data.get("name");
-                         String price = (String) data.get("price");
-                         String stiation = (String) data.get("stiation");
-                         String information = (String) data.get("information");
-                         String imageUrl = (String) data.get("downloadurl");
-
-                         userMailFromDB.add(userMail);
-                         produktNameFromDB.add(name);
-                         produktPriceFromDB.add(price);
-                         produktStiationFromDB.add(stiation);
-                         produktInformationFromDB.add(information);
-                         produktImageFromDB.add(imageUrl);
-
-
-                         feedRecycleAdapter.notifyDataSetChanged();
-
+                        String userMail = (String) data.get("usermail");
+                        String name = (String) data.get("name");
+                        String price = (String) data.get("price");
+                        String stiation = (String) data.get("stiation");
+                        String information = (String) data.get("information");
+                        String imageUrl = (String) data.get("downloadurl");
+                        BaseItemModel baseItemModel = new BaseItemModel();
+                        baseItemModel.setProduktImage(imageUrl);
+                        baseItemModel.setProduktInformation(information);
+                        baseItemModel.setProduktName(name);
+                        baseItemModel.setProduktPrice(price);
+                        baseItemModel.setProduktStiation(stiation);
+                        baseItemModel.setUserMail(userMail);
+                        baseItemModelArrayList.add(baseItemModel);
+                        baseItemRecylerViewAdapter.notifyDataSetChanged();
 
 
-
-                     }
+                    }
                 }
 
             }
         });
 
+    }
+
+    private void listenSearchBar() {
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                //  getDataFromFirebase(s);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                baseItemRecylerViewAdapter.getFilter().filter(s);
+                return false;
+            }
+        });
     }
 }
