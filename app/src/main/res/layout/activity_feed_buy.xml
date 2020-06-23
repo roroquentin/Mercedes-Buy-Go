@@ -151,7 +151,7 @@
             android:layout_height="35dp"
             android:layout_margin="3dp"
             android:background="@drawable/search_text_bar"
-            android:ems="10"
+            android:ems="12"
             android:hint="Arama yap"
             android:inputType="textPersonName" />
 
