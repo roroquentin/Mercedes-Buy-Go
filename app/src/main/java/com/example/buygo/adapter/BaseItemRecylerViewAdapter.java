@@ -20,11 +20,23 @@ import java.util.ArrayList;
 public class BaseItemRecylerViewAdapter extends RecyclerView.Adapter<BaseItemRecylerViewAdapter.BaseItemPostViewHolder> implements Filterable {
 
     private ArrayList<BaseItemModel> baseItemModelArrayList;
-    private ArrayList<BaseItemModel> filterList=new ArrayList<>();
+    private ArrayList<BaseItemModel> filterList = new ArrayList<>();
 
-    public void addItem(BaseItemModel itemModel){
+    public BaseItemRecylerViewAdapter(ArrayList<BaseItemModel> baseItemModelArrayList) {
+        this.baseItemModelArrayList = baseItemModelArrayList;
+        this.filterList.addAll(baseItemModelArrayList);
+
+    }
+
+    public void addItem(BaseItemModel itemModel) {
         baseItemModelArrayList.add(itemModel);
         filterList.add(itemModel);
+        notifyDataSetChanged();
+    }
+
+    public void clearAll() {
+        baseItemModelArrayList = new ArrayList<>();
+        filterList = new ArrayList<>();
         notifyDataSetChanged();
     }
 
@@ -34,12 +46,6 @@ public class BaseItemRecylerViewAdapter extends RecyclerView.Adapter<BaseItemRec
 
     public void setFilterList(ArrayList<BaseItemModel> filterList) {
         this.filterList = filterList;
-    }
-
-    public BaseItemRecylerViewAdapter(ArrayList<BaseItemModel> baseItemModelArrayList) {
-        this.baseItemModelArrayList = baseItemModelArrayList;
-        this.filterList.addAll(baseItemModelArrayList);
-
     }
 
     public ArrayList<BaseItemModel> getBaseItemModelArrayList() {
